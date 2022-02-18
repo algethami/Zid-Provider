@@ -1,0 +1,25 @@
+{
+    "name": "algethami/zid-provider",
+    "description": "Zid OAuth2 Provider for Laravel Socialite",
+    "license": "MIT",
+    "authors": [{
+        "name": "Abdullah AlGethami",
+        "email": "me@algethamy.com"
+    }],
+    "require": {
+        "socialiteproviders/manager": "^4.0",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Algethami\\Zid\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Algethami\\Zid\\ZidServiceProvider"
+            ]
+        }
+    }
+}
