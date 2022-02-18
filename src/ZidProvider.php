@@ -56,7 +56,7 @@ class ZidProvider extends AbstractProvider
                 "X-MANAGER-TOKEN"   => $this->credentialsResponseBody['access_token'],
             ])
             ->get('https://api.zid.sa/v1/managers/account/profile')
-            ->json();
+            ->json('user');
     }
 
     /**
@@ -65,10 +65,10 @@ class ZidProvider extends AbstractProvider
     protected function mapUserToObject(array $user)
     {
         return (new User())->setRaw($user)->map([
-            'id' => $user['user']['id'],
-            'nickname' => $user['user']['username'],
-            'name' => $user['user']['name'],
-            'email' => $user['user']['email'],
+            'id' => $user['id'],
+            'nickname' => $user['username'],
+            'name' => $user['name'],
+            'email' => $user['email'],
         ]);
     }
 
